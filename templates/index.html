@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Conversion Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>SQL Conversion Tool</h1>
+        <p>Convert MS SQL Server queries to Snowflake queries</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="upload-area">
+                <h2>Upload SQL File</h2>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <input type="file" id="file-input" name="file" accept=".sql" required>
+                    <button type="submit">Convert</button>
+                </form>
+                <div id="drag-drop-area">
+                    <p>Or drag and drop your SQL file here</p>
+                </div>
+            </div>
+            <div class="result-area">
+                <h2>Conversion Result</h2>
+                <div id="result-content"></div>
+                <a id="download-btn" style="display: none;">Download Converted SQL</a>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
